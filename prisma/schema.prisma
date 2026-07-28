@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Seccion {
+  id           Int         @id @default(autoincrement())
+  anio         String      // Ej: "3er Año"
+  especialidad String      // Ej: "Técnico Vocacional en Desarrollo de Software"
+  seccion      String      // Ej: "A", "B", "C"
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  actividades  Actividad[]
+}
+
+model Actividad {
+  id          Int      @id @default(autoincrement())
+  titulo      String
+  descripcion String?
+  tipo        String   // Ej: "Charla de Valores", "Beca Integración", "Capacitación"
+  lugar       String?
+  fechaHora   DateTime
+  organizador String?
+  seccionId   Int
+  seccion     Seccion  @relation(fields: [seccionId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
