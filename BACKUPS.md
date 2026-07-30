@@ -9,7 +9,7 @@ Este plan aplica a la base de datos PostgreSQL en producción (Railway) que alma
 * **Retención:** 30 días para backups diarios y 6 meses para los backups semanales.
 
 ## 3. Ubicación del Almacenamiento
-* **Primario:** Infraestructura cifrada del proveedor en nube (Railway / AWS storage).
+* **Primario:** Infraestructura cifrada del proveedor en nube (Railway).
 * **Secundario (Off-site):** Copias comprimidas `.sql` descargadas y almacenadas en un almacenamiento seguro en la nube (AWS S3 / Google Cloud Storage) aislado del entorno de producción.
 
 ## 4. Procedimiento de Recuperación ante Fallos (Disaster Recovery)
