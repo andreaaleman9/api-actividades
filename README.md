@@ -28,9 +28,9 @@ Antes de comenzar, asegúrate de tener instalado en tu equipo:
 
 ### 1. Clonar el repositorio
 ```bash
-git clone [https://github.com/andreaaleman9/api-actividades.git](https://github.com/andreaaleman9/api-actividades.git)
-cd api-actividades
+git clone https://github.com/andreaaleman9/api-actividades.git
 ```
+
 ### 2. Instalar dependencias
 ```bash
 npm install
@@ -40,7 +40,7 @@ Crea un archivo .env en la raíz del proyecto basándote en .env.example:
 ```bash
 PORT=3000
 NODE_ENV=development
-DATABASE_URL="postgresql://usuario:password@localhost:5432/db_actividades?schema=public"
+DATABASE_URL="postgresql://usuario:basededatos123@localhost:5432/basededatos123?schema=public"
 ```
 ### 4. Generar el cliente de Prisma y aplicar migraciones
 ```bash
@@ -56,14 +56,16 @@ Modo desarrollo:
 ```bash
 npm run dev
 ```
+
 El servidor estará corriendo en http://localhost:3000.
 
-# Método, Ruta, Descripción
-GET /health, Verifica el estado del servidor y la conexión a PostgreSQL. 
-GET /api/secciones, Obtiene el listado de secciones. 
-POST /api/secciones, Crea una nueva sección. 
-GET /api/actividades, Obtiene el listado de actividades registradas. 
-POST /api/actividades, Crea una nueva actividad vinculada a una sección. 
+| Método | Ruta | Descripción |
+| :--- | :--- | :--- |
+| **GET** | `/health` | Verifica el estado del servidor y la conexión a PostgreSQL. |
+| **GET** | `/api/secciones` | Obtiene el listado de secciones. |
+| **POST** | `/api/secciones` | Crea una nueva sección. |
+| **GET** | `/api/actividades` | Obtiene el listado de actividades registradas. |
+| **POST** | `/api/actividades` | Crea una nueva actividad vinculada a una sección. |
 
 # CI/CD y Despliegue en la Nube
 CI (Integración Continua): Configurada mediante GitHub Actions (.github/workflows/ci-cd.yml). Ejecuta comprobaciones automáticas de instalación, compilación de Prisma, auditorías de seguridad y validación de archivos en cada push o pull_request a main.
