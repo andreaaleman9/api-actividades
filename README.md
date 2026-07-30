@@ -33,7 +33,7 @@ cd api-actividades
 ```
 ### 2. Instalar dependencias
 ```bash
-npm install90
+npm install
 ```
 ### 3. Configurar variables de entorno
 Crea un archivo .env en la raíz del proyecto basándote en .env.example:
@@ -59,11 +59,11 @@ npm run dev
 El servidor estará corriendo en http://localhost:3000.
 
 # Método, Ruta, Descripción
-GET /health, Verifica el estado del servidor y la conexión a PostgreSQL
-GET /api/secciones, Obtiene el listado de secciones
-POST /api/secciones, Crea una nueva sección
-GET /api/actividades, Obtiene el listado de actividades registradas
-POST /api/actividades, Crea una nueva actividad vinculada a una sección
+GET /health, Verifica el estado del servidor y la conexión a PostgreSQL. 
+GET /api/secciones, Obtiene el listado de secciones. 
+POST /api/secciones, Crea una nueva sección. 
+GET /api/actividades, Obtiene el listado de actividades registradas. 
+POST /api/actividades, Crea una nueva actividad vinculada a una sección. 
 
 # CI/CD y Despliegue en la Nube
 CI (Integración Continua): Configurada mediante GitHub Actions (.github/workflows/ci-cd.yml). Ejecuta comprobaciones automáticas de instalación, compilación de Prisma, auditorías de seguridad y validación de archivos en cada push o pull_request a main.
